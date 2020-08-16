@@ -150,7 +150,7 @@ type Storage interface {
 }
 ```
 
-这两个方法最终都调用[txn/txn.go](https://github.com/mymeiyi/tidb/blob/07ae6078e887f42ff74a2787a9f9db3895f639d4/store/tikv/txn.go#L96) 的newTikvTxnWithStartTS方法创建事务，因此，在这里打印"hello transaction":
+这两个方法最终都调用[txn/txn.go](https://github.com/mymeiyi/tidb/blob/11d41eb75ed347f2547c835a50fb5af43c78b9b3/store/tikv/txn.go#L96) 的newTikvTxnWithStartTS方法创建事务，因此，在这里打印"hello transaction":
 ```
 // newTikvTxnWithStartTS creates a txn with startTS.
 func newTikvTxnWithStartTS(store *tikvStore, startTS uint64, replicaReadSeed uint32) (*tikvTxn, error) {
