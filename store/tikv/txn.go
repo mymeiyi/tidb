@@ -94,6 +94,7 @@ func newTiKVTxn(store *tikvStore) (*tikvTxn, error) {
 
 // newTikvTxnWithStartTS creates a txn with startTS.
 func newTikvTxnWithStartTS(store *tikvStore, startTS uint64, replicaReadSeed uint32) (*tikvTxn, error) {
+	logutil.BgLogger().Info("hello transaction")
 	ver := kv.NewVersion(startTS)
 	snapshot := newTiKVSnapshot(store, ver, replicaReadSeed)
 	return &tikvTxn{
