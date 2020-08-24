@@ -294,3 +294,6 @@ TPCH测试：
 ```
 https://github.com/pingcap-incubator/tidb-in-action/blob/master/session4/chapter3/tpc-c.md
 ```
+
+## 总结
+由于机器性能有限，大部分测试运行很慢，kv节点也中间自动重启了多次，测试结果没有参考意义，只能从这个过程中熟悉流程。
