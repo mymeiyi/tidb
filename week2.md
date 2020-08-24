@@ -259,7 +259,36 @@ run：
 ![yscb-run3](pic/23.png)
 
 
-## TPC-C 基准性能测试
+## TPC性能测试
+
+安装：
+```
+git clone https://github.com/pingcap/go-tpc.git
+make build
+```
+
+TPCC导入数据：
+```
+./bin/go-tpc tpcc -H 192.168.2.111 -P 4000 -D tpcc --warehouses 1 prepare
+```
+
+TPCC测试：
+```
+./bin/go-tpc tpcc -H 192.168.2.111 -P 4000 -D tpcc --warehouses 1 run --time 1m --threads 4
+```
+![tpcc](pic/24.png)
+
+
+TPCH导入数据：
+```
+./bin/go-tpc tpch prepare -H 192.168.2.111 -P 4000 -D tpch --sf 1 --analyze
+```
+
+TPCH测试：
+```
+./bin/go-tpc tpch run -H 192.168.2.111 -P 4000 -D tpch --sf 1
+```
+![tpch](pic/25.png)
 
 参考文档：
 ```
